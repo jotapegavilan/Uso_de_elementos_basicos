@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shashank.sony.fancytoastlib.FancyToast;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView txtTitulo;
@@ -25,12 +27,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtTitulo = (TextView) findViewById(R.id.txtTitulo);
-        txtNombre = (EditText) findViewById(R.id.txtNombre);
-        txtEdad = (EditText) findViewById(R.id.txtEdad);
-        txtCorreo = (EditText) findViewById(R.id.txtComentario);
-        txtComentario = (EditText) findViewById(R.id.txtComentario);
-        btnSiguiente = (Button) findViewById(R.id.btnSiguiente);
+        txtTitulo = findViewById(R.id.txtTitulo);
+        txtNombre = findViewById(R.id.txtNombre);
+        txtEdad = findViewById(R.id.txtEdad);
+        txtCorreo = findViewById(R.id.txtCorreo);
+        txtComentario = findViewById(R.id.txtComentario);
+        btnSiguiente = findViewById(R.id.btnSiguiente);
 
         btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 comentario = txtComentario.getText().toString();
                 edad = Integer.parseInt(txtEdad.getText().toString());
                 String texto = "Nombre : "+nombre+"\nCorreo electrónico : "+correo+"\nEdad : "+edad+" años\nComentario : "+comentario;
-                Toast.makeText(MainActivity.this, texto,Toast.LENGTH_LONG).show();
+                FancyToast.makeText(MainActivity.this,texto,FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true);
                 Intent intent = new Intent(MainActivity.this,activity2.class);
                 startActivity(intent);
             }
