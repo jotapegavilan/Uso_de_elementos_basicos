@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
                 comentario = txtComentario.getText().toString();
                 edad = Integer.parseInt(txtEdad.getText().toString());
                 String texto = "Nombre : "+nombre+"\nCorreo electrónico : "+correo+"\nEdad : "+edad+" años\nComentario : "+comentario;
-                FancyToast.makeText(MainActivity.this,texto,FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true);
+                FancyToast.makeText(MainActivity.this,texto,FancyToast.LENGTH_LONG,FancyToast.SUCCESS,R.drawable.corazon,false).show();
                 Intent intent = new Intent(MainActivity.this,activity2.class);
-                startActivity(intent);
+                //startActivity(intent);
             }
         });
     }
